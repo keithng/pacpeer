@@ -36,7 +36,7 @@ Base.prototype.loadData = function (a3) {
     type    : "GET",
     url     : M.apiPath + a3,
     success : function (series, status, response) {
-      M.draw(series)
+      if (series) M.draw(series)
     },
     error   : function (res, status) {
       console.error(res.responseJSON)
