@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= countryName %></title>
+    <script>
+      MODULES = [] // Global variable MODULES must be defined before modules are loaded
+
+      // Run each module once loading is complete
+      window.onload = function () {
+        var parent = $("body"),
+            a3     = "<%= countryCode %>" // Country code is passed to this file by node app
+        MODULES = _.map(MODULES, function (m) {
+          return new m(parent, a3)
+        })
+        $("#footer").appendTo(parent) // Always put footer last
+      }
+    </script>
+
+    <!-- Libraries -->
+    <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/cartodb.js"></script>
+    <script src="/js/underscore-min.js"    type="text/javascript" charset="utf-8"></script>
+    <script src="/js/jquery.min.js"        type="text/javascript" charset="utf-8"></script>
+    <script src="/js/d3.min.js"            type="text/javascript" charset="utf-8"></script>
+
+    <!-- Modules are loaded into MODULES -->
+    <script src="/modules/base.js"         type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/summary.js"      type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/telecoms.js"     type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/map.js"          type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/marketshare.js"  type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/exportbydest.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/importbyorig.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/exportbytype.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/importbytype.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" rel="stylesheet"/>
+
+    <link href="/css/style.less"           type="text/css" rel="stylesheet/less">
+    <script src="/js/less.min.js"          type="text/javascript" charset="utf-8"></script>
+  </head>
+
+  <body>
+    <div id=title><%= countryName %></div>
+    <!-- Modules will respect existing divs, which can be reordered at will -->
+    <div id="map"></div>
+    <div id="summary"></div>
+    <div id="telecoms"></div>
+    <div id="marketshare"></div>
+    <div id="exportbydest"></div>
+    <div id="importbyorig"></div>
+    <div id="exportbytype"></div>
+    <div id="importbytype"></div>
+
+    <!-- Footer uses the active countries list to create a navbar -->
+    <div id="footer">
+      <ul>
+        <% for (var i = 0; i < activeCountries.length; i++) { %>
+        <li>
+          <a href="/app/<%= activeCountries[i].a3 %>">
+            <%= activeCountries[i].name %>
+          </a>
+        </li>
+        <% } %>
+      <ul>
+    </div>
+  </body>
+</html>

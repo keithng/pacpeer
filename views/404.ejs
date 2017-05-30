@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Uh oh</title>
+
+    <!-- Stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.15/themes/css/cartodb.css" rel="stylesheet"/>
+
+    <link href="/css/style.less"           type="text/css" rel="stylesheet/less">
+    <script src="/js/less.min.js"          type="text/javascript" charset="utf-8"></script>
+  </head>
+
+  <body>
+    <div id=title>Page not found</div>
+    <div id="error">
+      Sorry, I can't find the page you're looking for
+    </div>
+
+    <!-- Footer uses the active countries list to create a navbar -->
+    <div id="footer">
+      <ul>
+        <% for (var i = 0; i < activeCountries.length; i++) { %>
+        <li>
+          <a href="/app/<%= activeCountries[i].a3 %>">
+            <%= activeCountries[i].name %>
+          </a>
+        </li>
+        <% } %>
+      <ul>
+    </div>
+  </body>
+</html>
