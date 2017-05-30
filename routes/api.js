@@ -27,10 +27,13 @@ router.get('/summary/:a3', function (req, res, next) {
     [req.params.a3],
     function (err, rows) {
       if (err) console.error(err)
-      var summary = (rows[0]) ? rows[0].text : null
-      var data    = {
-        name    : Country.getName(req.params.a3),
-        summary : summary || ""
+      var result = rows[0] || {},
+          name   = Country.getName(req.params.a3),
+          title  = /&titles\=(.*)/.exec(result.url)
+      var data   = {
+        name    : name,
+        url     : (title) ? "https://en.wikipedia.org/wiki/" + title[1] : null,
+        summary : result.text || ""
       }
       res.send(data)
     }

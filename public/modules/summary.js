@@ -17,6 +17,10 @@ Summary.prototype.draw = function (data) {
 
   // Some summary data has an empty first paragraph
   data.summary = data.summary.replace("<p><span></span></p>", "")
+  if (data.url) {
+    data.summary += "<a class=wikipedia href=" + data.url + " target=_blank>via Wikipedia</a>"
+  }
+
 
   // Add text
   var text = $("<div/>", {
