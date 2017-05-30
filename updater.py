@@ -9,9 +9,8 @@ import urllib2
 import json
 import psycopg2
 import datetime
+import sys
 
-DB   = "dbname='pacpeer' user='web'"
-YEAR = "all"
 
 #########################
 #                       #
@@ -226,17 +225,12 @@ def store_trade_commodities(a3, data, year):
     print str(added) + " INSERTED."
 
 
-db  = psycopg2.connect(DB)
-cur = db.cursor()
-cur.execute("SELECT * FROM countries")
-
-# country = ["Guernsey", "GG", "GGY"]
-# data = fetch_trade(country, YEAR)
-# if len(data): store_trade(country, data, YEAR)
-
-for country in cur.fetchall():
-  a3   = country[3] # 3-letter country code
-  name = country[1] # Country name
+#########################
+#                       #
+#  Top level functions  #
+#                       #
+#########################
+def update_country(a3, name, year):
   print
   print "--- " + name + " (" + a3 + ") ---"
 
@@ -245,15 +239,38 @@ for country in cur.fetchall():
   if d and d["text"]: store_summary(a3, d["url"], d["text"])
 
   # Export data by destination
-  data = fetch_trade_countries(a3, YEAR)
-  if len(data): store_trade_countries(a3, data, YEAR)
+  data = fetch_trade_countries(a3, year)
+  if len(data): store_trade_countries(a3, data, year)
 
   # Import/export data by commodity type
-  data = fetch_trade_commodities(a3, YEAR)
-  if len(data): store_trade_commodities(a3, data, YEAR)
+  data = fetch_trade_commodities(a3, year)
+  if len(data): store_trade_commodities(a3, data, year)
 
   # Write to database after every country
   db.commit()
   print
+
+
+# Initialise database
+db  = psycopg2.connect("dbname='pacpeer' user='web'")
+cur = db.cursor()
+
+# country = ["Guernsey", "GG", "GGY"]
+# data = fetch_trade(country, YEAR)
+# if len(data): store_trade(country, data, YEAR)
+
+# Set year
+YEAR = "all"
+
+# Filter by country
+if len(sys.argv) > 1:
+  cur.execute("SELECT * FROM countries WHERE LOWER(alpha_3)=LOWER('" + sys.argv[1] + "')")
+else:
+  cur.execute("SELECT * FROM countries")
+
+for country in cur.fetchall():
+  a3   = country[3] # 3-letter country code
+  name = country[1] # Country name
+  update_country(a3, name, YEAR)
 
 db.close()
