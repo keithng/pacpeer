@@ -24,17 +24,6 @@ Telecoms.prototype.draw = function (data) {
     class : "text",
     html  : "<p>" + data.summary + "</p>"
   }).appendTo(div)
-
-/*   // If text has more than one paragraph, collapse
-  if (text.children().length > 1) {
-    $("<div/>", {
-      class : "expand",
-      html  : "More..."
-    }).appendTo(div).click(function (e) {
-      div.toggleClass("collapse")
-      div.find(".expand").html((div.hasClass("collapse")) ? "More..." : "Less...")
-    })
-  } */
 }
 
 // App automatically loads every module in MODULES, you just need to load this js file in index.ejs
