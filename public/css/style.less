@@ -1,3 +1,5 @@
+@links : #233F8B;
+
 body {
   margin : 0;
   font   : 18px Lato, Helvetica, Arial, sans-serif;
@@ -37,12 +39,12 @@ body {
   .wikipedia {
     font-size  : 0.8em;
     font-style : oblique;
-    color      : #233F8B;
+    color      : @links;
   }
   .expand {
     text-align : right;
     cursor     : pointer;
-    color      : #233F8B;
+    color      : @links;
   }
   /* On collapse (on by default), hide every paragraph except for the first */
   &.collapse .text > p {
@@ -61,8 +63,23 @@ body {
 
 
 #marketshare {
+  .footnote {
+    margin-top    : -1.5em;
+    margin-bottom : 1.5em;
+    fill          : #666;
+    font-size     : 0.8em;
+    font-style    : oblique;
+  }
   table {
     width : 100%;
+    a {
+      text-decoration : none;
+      color           : @links;
+    }
+    .incumbent {
+      font-weight : bold;
+      background-color : #eef;
+    }
     th {
       font-size : 0.8em;
     }
@@ -75,7 +92,6 @@ body {
         text-align : right;
       }
       &:nth-child(3) {
-        text-align : center;
         text-transform : capitalize;
       }
     }

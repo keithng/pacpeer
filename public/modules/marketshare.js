@@ -13,6 +13,13 @@ MarketShare.prototype = _.extend(MarketShare.prototype, {
 
 // Draw function
 MarketShare.prototype.draw = function (series) {
+  // Footnote
+  var footnote = $("<div/>", {
+    class : "footnote",
+    html  : "* Bolded providers are incumbents"
+  }).appendTo(this.el)
+
+
   var table = $("<table/>", {
     class : "text"
   }).appendTo(this.el)
@@ -22,7 +29,6 @@ MarketShare.prototype.draw = function (series) {
   _.each([
     "",
     "Share",
-    "Incumbent",
     "Subsidiary of"
   ], function (html) {
     $("<th/>", { html : html }).appendTo(tr)
@@ -31,15 +37,16 @@ MarketShare.prototype.draw = function (series) {
   // Add rows
   _.each(series, function (d) {
     var tr = $("<tr/>").appendTo(table)
+    if (d.incumbent) tr.addClass("incumbent")
     _.each([
       "<a href='" + d.url + "' target=_blank>" + d.name + "</a>",
       (Math.round(d.share) || "<1") + "%",
-      d.incumbent,
       d.subsidiary_of
     ], function (html) {
       $("<td/>", { html : html }).appendTo(tr)
     })
   })
+
 }
 
 // App automatically loads every module in MODULES, you just need to load this js file in index.ejs
