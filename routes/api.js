@@ -136,12 +136,12 @@ router.get('/importbytype/:a3', function (req, res, next) {
 // Market share
 router.get('/marketshare/:a3', function (req, res, next) {
   query(
-    "SELECT p.id,p.provider_name,p.provider_url,p.provider_description," +
-    "p.incumbent,sub.provider_name AS subsidiary_of," +
+    "SELECT p.id,p.provider_name,p.provider_url,p.provider_description,p.incumbent," +
+    "parent.provider_name AS parent_name,parent.provider_url AS parent_url," +
     "ms.country_code,ms.share,ms.last_updated " +
     "FROM market_share AS ms " +
     "JOIN providers AS p ON ms.provider_id=p.id " +
-    "LEFT OUTER JOIN providers AS sub ON p.subsidiary_id=sub.id " +
+    "LEFT OUTER JOIN providers AS parent ON p.subsidiary_id=parent.id " +
     "WHERE ms.country_code=$1",
     [Country.getA2(req.params.a3)],
     function (err, rows) {
@@ -159,7 +159,8 @@ router.get('/marketshare/:a3', function (req, res, next) {
             url           : d.provider_url,
             description   : d.provider_description,
             incumbent     : d.incumbent,
-            subsidiary_of : d.subsidiary_of,
+            parentName    : d.parent_name,
+            parentUrl     : d.parent_url,
             // Market share data
             a2            : d.country_code,
             country       : Country.getName(d.country_code),

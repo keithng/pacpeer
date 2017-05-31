@@ -41,7 +41,7 @@ MarketShare.prototype.draw = function (series) {
     _.each([
       "<a href='" + d.url + "' target=_blank>" + d.name + "</a>",
       (Math.round(d.share) || "<1") + "%",
-      d.subsidiary_of
+      (d.parentName) ? "<a href='" + d.parentUrl + "' target=_blank>" + d.parentName + "</a>" : ""
     ], function (html) {
       $("<td/>", { html : html }).appendTo(tr)
     })
