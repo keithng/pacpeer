@@ -15,14 +15,10 @@ Telecoms.prototype = _.extend(Telecoms.prototype, {
 Telecoms.prototype.draw = function (data) {
   var div = this.$
 
-  // Some summary data has an empty first paragraph
-  // Maybe the telecoms data is better and we don't need this anymore
-//   data.summary = data.summary.replace("<p><span></span></p>", "")
-
   // Add text
   var text = $("<div/>", {
     class : "text",
-    html  : "<p>" + data.summary + "</p>"
+    html  : data.summary
   }).appendTo(div)
 }
 
