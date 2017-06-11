@@ -180,6 +180,28 @@ router.get('/marketshare/:a3', function (req, res, next) {
 })
 
 
+// Template for adding more content
+// https://dev.pacpeer.org:3443/api/template/aus
+router.get('/template/:a3', function (req, res, next) {
+  query(
+    "SELECT * FROM telecoms_text WHERE a3=UPPER($1)",    // PSQL query
+    [req.params.a3],                                     // Parameters for query (e.g. parameter[0] is req.params.a3...
+                                                         // ...so $1 in query above will be replaced with country code
+    function (err, rows) {                               // Function to run on finish, rows is the result of the PSQL query
+      // err = "TEST OMG THIS IS AN ERROR"
+      if (err) console.error(err)                        // Errors will be logged in pacpeer-dev.log
+      var data    = {                                    // Manipulate results however you want
+        a3      : req.params.a3,
+        name    : Country.getName(req.params.a3),
+        err     : err,
+        rows    : rows,
+        test    : "Whatever you want to put in"
+      }
+      res.send(data)                                     // Return data
+    }
+  )
+})
+
 // Send all unrouted paths forward (to the 404 page)
 router.use("*", function (req, res, next) {
   next()
