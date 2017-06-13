@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+  <% include partials/header %>
+  <body>
+    <div id=titlelong>Avaiki: An Island Nation in the Pacific</div>
+
+    <div id="summary" class="section text">
+      <div class="text">
+        <h2>A Story of Two Telcos</h2>
+        <p>With their small populations, low population densities, and great distances both between islands and to the global Internet, Pacific Island nations have challenges seen nowhere else in the world. Yet faced with these challenges, carriers rarely work together to provide the best, lowest cost services to their markets.
+        <p>To illustrate issues discovered in the PacPeer study, the mythological nation Avaiki has been envisioned, and a snapshot of its telecommunications environment in 2017 presented.</p>
+        <p>Avaiki is an island nation with a population of around 100,000 residents, located mid-way between Kiribati and Samoa. Two telcos provide service to around 70% of the population. In this paper, Tangaroa Telecom is our incumbent, a privatised ex-government monopoly. Tawhiri Mobile is a competitive mobile network operator. The two carriers don't peer, and data traffic between the two networks interconnects in the USA.</p>
+        <p><img src="/images/avaiki_overview.svg" width="100%" style="margin:0px auto;display:block"></p>
+
+        <h2>Tangaroa Telecom</h2>
+        <p>Tangaroa Telecom has a network covering around 90% of Avaiki's population. It's connected to the global Internet via a submarine fibre cable to Samoa. On 'Ole, its network is based on <a href="https://en.wikipedia.org/wiki/Synchronous_optical_networking">SDH</a> running over fibre optic cables, with several rings in use. Tangaroa's monopoly on fixed lines communication in Avaiki allows them to bury their fibre cables or string them along utility poles as needed. They provide Avaiki's second and third most populous islands with mobile service and fixed wireless via microwave backhaul. A further two islands have cell towers serviced by 8 mbps satellite links.</p>
+        <p><img src="/images/tangaroa_network.svg" width="100%" style="margin:0px auto;display:block"></p>
+        <p>When Tangaroa Telecom was privatised, the government valued its assets at replacement cost. No premium was charged as telecoms activities were loss-making before privatisation. Tangaroa's investors saw an opportunity in these assets to turn a profit, investing $4.5m in cash and expecting a high return on what they considered a high-risk investment.</p>
+        <details>
+          <summary>Tangaroa Assets</summary>
+          <img src="/images/tangaroa_assets.png" width="400">
+        </details>
+        <p>Tangaroa's outgoings are not insignificant. They include staff costs, diesel fuel for cell towers and satellite links, and setting aside capital for future asset replacement. There are also interest payments to be made on $8 million dollars its owners borrowed from Avaiki's government to purchase the business.</p>
+        <details>
+          <summary>Tangaroa Expenses</summary>
+          <img src="/images/tangaroa_expenses.png" width="400">
+        </details>
+        <p>Network charges are Tangaroa's single largest outgoing. They purchase 310 Mbps of capacity to Los Angeles, with 90% of capacity going to data and the balance supporting voice traffic. Their bandwidth per user is around 10 Kbps - around the same as <a href="http://www.theglobaleconomy.com/rankings/Internet_bandwidth/">Guyana</a> - though only a small number of their users subscribe to data services. Taking into account the finance costs of their submarine cable IRU, Tangaroa's effective landed bandwidth cost is $380 Mbps. The long-term nature of submarine cable deals means Tangaroa is locked into this pricing for a few more years, and is unlikely to purchase more bandwidth soon.</p>
+        <p>Income from the network comes from a few main sources. Tangaroa's most profitable customers are the government, a fisheries company, and a mining company. These organisations have multiple locations. Tangaroa sells each a private branch exchange, private networking between their sites, mobile phones, and Internet connectivity. A handful of other businesses and NGOs also use Tangaroa for fixed line telephony, Internet, and mobile phones. Small businesses and wealthy individuals are the primary consumers of the fixed line network. Finally Tangaroa's ageing 2G and 3G networks have around 30,000 subscribers. Thousands of these subscribers also have phones on the Tawhiri network they use for data and messaging.</p>
+        <details>
+          <summary>Tangaroa Income</summary>
+          <img src="/images/tangaroa_income.png" width="400">
+        </details>
+        <p>Competition has seen customers flee the former monopoly's mobile network for its competitor, and the market's mobile ARPU has dropped to $5/month. Tangaroa's high cost basis means they lose money on most of their mobile network. Keeping up mobile coverage - especially on the outer islands  - was a condition of sale when the government divested the network, so Tangaroa has little recourse but to continue operations. </p><p>On a cash basis Tangaroa barely makes ends meet and is frequently late in paying its largest creditor, the government. Its EBIT is around half a million dollars but headed lower every year as finance is paid down. With little free cash, management works on massaging its Internet bandwidth to keep customers happy while avoiding the necessity to purchase more capacity.</p>
+        <details>
+          <summary>Tangaroa Financials</summary>
+          <img src="/images/tangaroa_financials.png" width="400">
+        </details>
+
+        <h2>Tawhiri Mobile</h2>
+        <p>Around the time Tangaroa was privatised, Avaiki's government held a radio spectrum auction. Tawhiri's owners saw potential for competition in the voice market and purchased national spectrum rights with cash. A few years later they used vendor finance and development loans to build a 2G voice-only network covering 50% of Avaiki's population. With the arrival of inexpensive 4G base stations, they went back to their vendor for another loan to add 4G sectors to all their towers, and to upgrade their microwave links &amp; satellite station for broadband.</p>
+        <p><img src="/images/tawhiri_network.svg" width="100%" style="margin:0px auto;display:block"></p>
+        <p>In making the jump to broadband, Tawhiri has decided to eschew the use of Avaiki's submarine cable. Instead they built a satellite earth station &amp; now send all of their traffic to Hawaii over a high-throughput satellite provider. As a result of their choices, their asset base and borrowings are significantly less than Tangaroa's.</p>
+        <details>
+          <summary>Tawhiri Assets</summary>
+          <img src="/images/tawhiri_assets.png" width="400">
+        </details>
+        <p>Tawhiri's operational expenses are far lower than Tangaroa's. They have fewer staff, they pay them a bit less, and have operations only on part of 'Ole. With their 4G network build, they've chosen an all-IP network architecture, lowering the maintenance and replacement costs for their central exchange and microwave links. Their choice to use satellite for backhaul instead of submarine fibre means they pay a bit more for connectivity, but haven't had to borrow to finance a submarine cable IRU.</p>
+        <details>
+          <summary>Tawhiri Expenses</summary>
+          <img src="/images/tawhiri_expenses.png" width="400">
+        </details>
+        <p>As with Tangaroa, network charges are Tawhiri's largest outgoing. They purchase 300 Mbps of capacity to Hawaii, with 90% of capacity going to data and the balance supporting voice traffic. Their effective bandwidth per user is around 8 Kbps - around the same as <a href="http://www.theglobaleconomy.com/rankings/Internet_bandwidth/">Kyrgyzstan</a>. Tangaroa's effective landed bandwidth cost is $448/ Mbps, and adding more is a relatively easy matter.</p><p>Without a fixed-line offering, Tawhiri misses out on the top end of the market. They've picked up a handful of business users and around a third of the market for small businesses and wealthy individuals. Their real strength is in mobile users, where they count 57% of all mobile subscribers as their customers. (Tawhiri Income)</p>
+        <details>
+          <summary>Tawhiri Income</summary>
+          <img src="/images/tawhiri_income.png" width="400">
+        </details>
+        <p>With low borrowings and a favourable interest rate from its equipment supplier, Tawhiri Mobile is a good cash producer for its investors. Their EBIT is $0.37m, a return of nearly 19% per annum on their invested capital. Investors are happy, but management is faced with performance complaints, especially for users accessing government websites hosted on Tangaroa Telecom.</p>
+        <details>
+          <summary>Tawhiri Financials</summary>
+          <img src="/images/tawhiri_financials.png" width="400">
+        </details>
+
+        <h2>Internet Connectivity</h2>
+        <p>Tangaroa Telecom purchases a point-to-point circuit to Los Angeles via Samoa and Fiji. All their traffic travels to Los Angeles before connecting to any other network. Tawhiri on the other hand purchases Internet transit in Hawaii. Their traffic takes the shortest Internet path from there to get to any destination. In the case of traffic to Tangaroa, this is Los Angeles.</p>
+        <p><img src="/images/avaiki_traffic.svg" width="100%" style="margin:0px auto;display:block"></p>
+
+        <h2>Submarine Fibre and Distribution Charges</h2>
+        <p>Tawhiri Mobile pays around 18% more per megabit for their Internet traffic via satellite than Tangaroa does via cable. Why do they choose to do this, when they could buy bandwidth on the cable to Samoa?</p>
+        <p>The answer lies in cable rights and distribution charges. Tawhiri doesn't own part of the submarine cable, so they can only purchase landed capacity.  Tangaroa want a margin of 30% on their costs at the landing station, plus a $20/ Mbps delivery fee for use of part of their terrestrial network - to deliver a dedicated Internet circuit to Los Angeles. These price doesn't include direct access to Tangaroa's local network.</p>
+        <p>Tangaroa has a regulated monopoly on fixed line communications, but this doesn't have an impact on the pricing it offers Tawhiri. The regulator believes Tangaroa's fee structure for Internet access is fair, as it is made up of cost recovery plus a modest profit. Large businesses and the government pay $514 Mbps for Internet bandwidth under this price regime, so Tangaroa has no motivation to sell to Tawhiri for less. When it comes to local access to Avaiki's large businesses and government offices, Tangaroa has offered Tawhiri access at an eye-watering $1,160 Mbps.</p>
+        <p>Faced with paying 15% extra on their largest operational expense, and 255% more for direct access to Tangaroa's customer base, Tawhiri chooses to stay on satellite. Their traffic gets everywhere it needs to go in the end, even if it takes longer than it would on fibre.</p>
+
+        <h2>Peering in Avaiki</h2>
+        <p>Peering is the direct exchange of traffic between two networks - typically on an un-paid basis. Providers of equal size find that peering can reduce their network charges and improve performance to their users, without compromising their business commercially.</p>
+        <p>Government officials, academics, and activists want Tangaroa and Tawhiri to peer, but for many years Tangaroa refused. With more than twice the asset base, far greater coverage, and 50% greater revenue, Tangaroa Telecom doesn't see itself as an equal to Tawhiri - it believes it has a far more valuable network. And the government regulator agrees.</p>
+        <p>At the request of Tawhiri, the regulator intervened. They chose to evaluate each company's infrastructure to determine the cost of delivering a megabit of traffic, then use that information to price interconnections. It found the companies have dramatically different cost structures.</p>
+        <table>
+          <tbody>
+            <tr><th></th><th>Tangaroa Telecom</th><th>Tawhiri Mobile</th></tr>
+            <tr><td>Distribution on 'Ole</td><td style="text-align: right;">$689 / Mbps</td><td style="text-align: right;">$411 / Mbps</td></tr>
+            <tr><td>Outer Island Distribution</td><td style="text-align: right;">$1,709 / Mbps</td><td style="text-align: right;"></td></tr>
+            <tr><td>Blended Distribution (80/20 'Ole/Outer)</td><td style="text-align: right;">$892 / Mbps</td><td style="text-align: right;">$411 / Mbps</td></tr>
+          </tbody>
+        </table>
+        <p>Armed with a cost model, the regulator set commercial terms for paid peering. They decided:</p>
+        <ul>
+          <li>Any competitor may request a settled peering session with the incumbent</li>
+          <li>Traffic is invoiced to the consuming network at the <a href="http://www.semaphore.com/blog/94-95th-percentile-bandwidth-metering-explained-and-analyzed">95th percentile</a></li><li>The incumbent must offer traffic to competitors at its distribution cost</li>
+          <li>Competitors must offer traffic from its network at their distribution cost</li>
+          <li>Parties must equally split all costs associated with the interconnection point</li>
+        </ul>
+        <p>In the case Tangaroa and Tawhiri were exchanging equal amounts of traffic, Tawhiri would pay Tangaroa $481 / Mbps of traffic exchanged. This is around 7% more than their international capacity charges, but worthwhile for the performance boost. It would seem an easy case for Tawhiri to take advantage of regulated peering rates.</p>
+
+        <h2>Settlement Scheme Uneconomic for Tawhiri</h2>
+        <p>Tawhiri, a mobile network operator, is primarily an access network. Their customers download heavily while uploading very little, leading to an inbound to outbound traffic ratio of around around 8:1. Tangaroa Telecom, as the fixed line monopoly, connects a number of companies and government agencies who host websites. This balances out their traffic ratio to the Internet to nearly 3:2.</p>
+        <p><img src="/images/avaiki_traffic_ratios.svg" width="100%" style="margin:0px auto;display:block"></p>
+        <p>If Tawhiri entered into the regulated paid settlement arrangement they would start paying nearly twice as much for local access to Tangaroa's network as they pay now, getting that same access in Los Angeles. They'd also start paying a lot more for some general Internet traffic from Tangaroa cache servers that costs Tangaroa very little to provide.</p>
+        <p>Even with a more balanced traffic ratio, or with a way of excluding external content from their peering link, Tawhiri feels the regulator's methodology is flawed. Although they don't have complete coverage of 'Ole, they're on their way. Tawhiri thinks that when they finish their network build of 'Ole, it will cost them only $450 Mbps to deliver traffic across their network. They brace at the idea they'll have to pay more to Tangaroa just because Tangaroa runs a less efficient network.</p>
+
+        <h2>Business As Usual</h2>
+        <p>Prior to regulatory intervention, Tawhiri and many interested parties believed Tangaroa should be forced to peer openly, and settlement-free. With the regulator's determination, it's Tangaroa who are now pushing for peering. The wording of the ruling however doesn't help Tangaroa. It allows challengers to request peering from the incumbent - the regulated monopoly - not the other way around. With peering arrangements uneconomic for Tawhiri, and Tangaroa unable to compel an interconnection, traffic between the networks will continue to exchange in Los Angeles.</p>
+      </div>
+    </div>
+
+    <% include partials/footer %>
+  </body>
+</html>

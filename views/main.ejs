@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>A Peering Strategy for the Pacific Islands</title>
+  <head>
+    <title><%= countryName %></title>
     <script>
       MODULES = [] // Global variable MODULES must be defined before modules are loaded
 
@@ -24,7 +24,15 @@
 
     <!-- Modules are loaded into MODULES -->
     <script src="/modules/base.js"         type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/summary.js"      type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/telecoms.js"     type="text/javascript" charset="utf-8"></script>
     <script src="/modules/map.js"          type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/marketshare.js"  type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/exportbydest.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/importbyorig.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/exportbytype.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/modules/importbytype.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="/modules/template.js"     type="text/javascript" charset="utf-8"></script> -->
 
     <!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -32,21 +40,18 @@
 
     <link href="/css/style.less"           type="text/css" rel="stylesheet/less">
     <script src="/js/less.min.js"          type="text/javascript" charset="utf-8"></script>
-	</head>
-	<body>
-    <div id=titlelong>A Peering Strategy for the Pacific Islands</div>
-
+  </head>
+  <body>
+    <div id=title><%= countryName %></div>
+    <!-- Modules will respect existing divs, which can be reordered at will -->
     <div id="map"></div>
-    <div id="telecoms" class="section text">
-      <div class="text">
-        <p>This site reviews the telecommunications environment of the Pacific Islands. It looks at each community's connectivity to the world: telecommunications, sea freight, air routes, and trade. It provides real-time statistics on provider market share. It considers the complexity of island telecommunications through the mythical nation of Avaiki. Over time it will be expanded to include data on carrier interconnections and performance to each market's major trading partners.</p>
-        <p>
-          <a href="http://isif.asia/" target="_blank" style="border-bottom-style: none;"><img style="margin: 0px 25px 32px 0px;" src="images/isif-logo.png" alt="ISIF_white" width="" height="40" /></a>
-          <a href="http://apnic.net/" target="_blank" style="border-bottom-style: none;"><img style="margin: 20px 20px 20px 0px;" src="images/APNIC_logo.png" alt="apnic_logo_white" width="" height="60" /></a>
-          <a href="http://nsrc.org/" target="_blank" style="border-bottom-style: none;"><img style="margin: 20px 0px 0px 0px;" src="images/nsrc-logo-front.png" alt="nsrc_logo_white" width="" height="76" /></a>
-        </p>
-      </div>
-    </div>
+    <div id="summary"></div>
+    <div id="telecoms"></div>
+    <div id="marketshare"></div>
+    <div id="exportbydest"></div>
+    <div id="importbyorig"></div>
+    <div id="exportbytype"></div>
+    <div id="importbytype"></div>
 
     <% include partials/footer %>
   </body>

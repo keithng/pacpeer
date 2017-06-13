@@ -166,7 +166,7 @@ var NAME = {
   "MUS": "Mauritius",
   "MYT": "Mayotte",
   "MEX": "Mexico",
-  "FSM": "Micronesia, Federated States of",
+  "FSM": "Federated States of Micronesia",
   "MDA": "Moldova, Republic of",
   "MCO": "Monaco",
   "MNG": "Mongolia",
@@ -271,7 +271,7 @@ var NAME = {
   "YEM": "Yemen",
   "ZMB": "Zambia",
   "ZWE": "Zimbabwe",
-
+  "ZZZ": "Pacific Islands",
   "HAW": "Hawaii"
 }
 
@@ -524,6 +524,6 @@ var A2 = {
   "ZMB": "ZM",
   "ZWE": "ZW",
   "ALA": "AX",
-
+  "ZZZ": "ZZ",
   "HAW": "HI"
 }

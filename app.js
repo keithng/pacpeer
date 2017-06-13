@@ -55,6 +55,7 @@ http.listen(8080, function () {
 //////////////
 //  Routes  //
 //////////////
+
 // API for app data
 app.use('/api/', require('./routes/api'))
 
@@ -63,8 +64,7 @@ app.use('/app/:a3', function (req, res, next) {
   var a3   = req.params.a3,
       name = Country.getName(a3)
   if (name == "Unknown") res.redirect("/error") // Die if an invalid country is entered
-  else res.render('index', {
-    activeCountries : Country.getActive(),
+  else res.render('main', {
     countryCode     : a3,
     countryName     : name
   })
@@ -73,6 +73,23 @@ app.use('/app/:a3', function (req, res, next) {
 // Catch blank calls to app path
 app.use('/app/', function (req, res, next) {
   res.redirect("/app/nzl") // Default to NZL
+})
+
+// Staticish pages
+app.use('/about',        function (req, res) { res.render('about') })
+app.use('/avaiki',       function (req, res) { res.render('avaiki') })
+app.use('/introduction', function (req, res) { res.render('introduction') })
+app.use('/overview',     function (req, res) { res.render('overview') })
+app.use('/references',   function (req, res) { res.render('references') })
+
+// Root
+app.use('/', function (req, res) {
+  var a3   = "ZZZ",
+      name = Country.getName(a3)
+  res.render('index', {
+    countryCode     : a3,
+    countryName     : name
+  })
 })
 
 // Catch all other paths
